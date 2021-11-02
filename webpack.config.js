@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 const { merge } = require("webpack-merge");
 const webpack = require("webpack");
 const prodPrefix = "/mu"
@@ -28,6 +29,16 @@ const common = {
 			template: "./public/index.html",
 		}),
 	],
+    resolve: {
+		extensions: [
+			".tsx",
+			".ts",
+			".js",
+		],
+        plugins: [
+            new TsconfigPathsPlugin(),
+        ],
+    },
 };
 
 const prod = {
