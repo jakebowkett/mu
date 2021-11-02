@@ -1,0 +1,60 @@
+
+h1,
+#dummy-heading {
+    margin: 0;
+    font-size: 2rem;
+    font-family: var(--serif);
+    color: var(--accent);
+    white-space: nowrap;
+}
+#dummy-heading {
+    user-select: none;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+#root {
+    display: flex;
+    box-sizing: border-box;
+}
+
+#app {
+    --gap: 1.5rem;
+    --screensW: 25%;
+    --rangeW: 2rem;
+    flex: 1 1 100%;
+    padding: 1rem;
+    padding-right: 0;
+    display: flex;
+    gap: var(--gap);
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+#viewer {
+    z-index: 2;
+    box-sizing: border-box;
+    margin-right: calc(calc(var(--screensW) + 3rem) + var(--rangeW));
+}
+
+#range {
+    width: var(--rangeW);
+    right: calc(var(--screensW) + 2rem);
+}
+
+#screens {
+    position: fixed;
+    top:    1rem;
+    bottom: 1rem;
+    right:  1rem;
+    width: var(--screensW);
+    flex: 0 1 var(--screensW);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-sizing: border-box;
+}
+#screens > * {
+    flex: 1 1 50%;
+}

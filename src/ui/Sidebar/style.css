@@ -1,0 +1,56 @@
+
+#sidebar {
+    position: fixed;
+    top:    1rem;
+    bottom: 1rem;
+    left:   1rem;
+    display: flex;
+    flex-direction: column;
+}
+#sidebar > * {
+    margin-top: 1rem;
+}
+#sidebar > .bar {
+    flex: 0 0 0.5rem;
+}
+#sidebar > .fader {
+    flex: 0 1 100%;
+    position: relative;
+}
+#file-picker {
+    position: absolute;
+    top:    0;
+    bottom: 0;
+    left:   0;
+    right:  0;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    padding-bottom: 6rem;
+}
+#file-picker { scrollbar-width: none; }       /* Firefox only. */ 
+#file-picker::-webkit-scrollbar { width: 0; } /* Everything except Firefox. */
+
+.fader::before,
+.fader::after {
+    content: "";
+    position: absolute;
+    left:   0;
+    right:  0;
+    height: 3rem;
+    z-index: 2;
+    opacity: 0;
+    transition-duration: 0.2s;
+    pointer-events: none;
+}
+.fader::before {
+    top: 0;
+    background: linear-gradient(to bottom, var(--bg), transparent);
+}
+.fader::after {
+    bottom: 0;
+    background: linear-gradient(to top,    var(--bg), transparent);
+}
+.fader.fade-top::before,
+.fader.fade-bottom::after {
+    opacity: 1;
+}

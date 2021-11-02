@@ -31,8 +31,9 @@ body {
     margin: 0;
     background: var(--bg);
     color: var(--col);
-    display: flex; /* prevents overflow of child margins */
+    width: 100%;
     font-family: var(--sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
