@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "allowSyntheticDefaultImports": true,
+        "noFallthroughCasesInSwitch": true,
+        "esModuleInterop": true,
+        "strict": true,
+        "target": "es6",
+        "jsx": "react-jsx",
+        "sourceMap": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "noImplicitAny": true
+    },
+    "include": ["src/**/*"]
+}

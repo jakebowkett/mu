@@ -1,0 +1,143 @@
+@import "../var.css";
+
+.range {
+    --wTrack: calc(var(--rangeW) * 0.5);
+    --wPos: calc(var(--rangeW) * 0.42);
+    --gap: calc(var(--rangeW) * 0.18);
+    --brdW: 2px;
+    width: calc(calc(var(--wTrack) + var(--wPos)) + var(--gap));
+    gap: var(--gap);
+    position: fixed;
+    display: flex;
+    top:    1rem;
+    bottom: 1rem;
+    box-sizing: border-box;
+}
+.range .track {
+    --w: var(--wTrack);
+    flex: 0 0 var(--w);
+    box-sizing: border-box;
+    background: var(--bgAlt);
+    border: 2px solid var(--accent);
+    overflow: hidden;
+    position: relative;
+}
+.range .pos {
+    --w: var(--wPos);
+    position: relative;
+    flex: 0 0 var(--w);
+}
+.range:not(.reverse) .track {
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+.range.reverse .track {
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+.range .track::before,
+.range .track::after {
+    content: "";
+    position: absolute;
+    top:    -64px;
+    bottom: -64px;
+    animation: range 24s ease infinite;
+}
+.range.reverse .track::after {
+    right: 0;
+}
+.range .track::before {
+    left:   0;
+    right:  0;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent   129px,
+        var(--accent) 129px,
+        var(--accent) 130px
+    );
+}
+.range .track::after {
+    width: 6px;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent   9px,
+        var(--accent) 9px,
+        var(--accent) 10px
+    );
+}
+.range .end,
+.range .dragger {
+    position: absolute;
+    width:  var(--w);
+}
+.range .end {
+    background: var(--accent);
+    box-sizing: border-box;
+    height: var(--w);
+    bottom: -2rem;
+    opacity: 0;
+    transition-duration: 0.2s;
+    transition-property: bottom, opacity;
+}
+.range.at-end .end {
+    bottom:  0;
+    opacity: 1;
+}
+.range .dragger {
+    --h: 3rem;
+    --rect: calc(var(--h) * 0.6); 
+    z-index: 2;
+    overflow: hidden;
+    height: var(--h);
+}
+.range .dragger::before {
+    content: "";
+    position: absolute;
+    height: var(--rect);
+    background: var(--accent);
+    width: var(--w);
+}
+.range .dragger::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    transform-origin: bottom left;
+    transform: translateY(calc(var(--rect) - var(--w))) rotateZ(45deg);
+    width:  calc(var(--w) * 2);
+    height: var(--w);
+    background: var(--accent);
+}
+.range .end::before {
+    content: "";
+    position: absolute;
+    width:  calc(var(--w) * 3);
+    background: var(--bg);
+    height: calc(var(--w) / 1.33);
+    bottom: 0;
+    right:  0;
+    transform-origin: bottom right;
+    transform: rotateZ(45deg);
+}
+@keyframes range {
+    0% {
+        margin-top: 0px;
+    }
+    20% {
+        margin-top: -40px;
+    }
+    30% {
+        margin-top: 10px;
+    }
+    45% {
+        margin-top: -20px;
+    }
+    70% {
+        margin-top: 60px;
+    }
+    85% {
+        margin-top: -30px;
+    }
+    100% {
+        margin-top: 0;
+    }
+}

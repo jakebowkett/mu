@@ -1,0 +1,38 @@
+
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Romelio";
+    font-weight: normal;
+    font-style: normal;
+    src: local("Romelio"),
+         url("./font/Romelio.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Twobit";
+    font-weight: normal;
+    font-style: normal;
+    src: local("Twobit"),
+         url("./font/Twobit.otf") format("opentype");
+}
+  
+html { scrollbar-width: none; }       /* Firefox only. */ 
+html::-webkit-scrollbar { width: 0; } /* Everything except Firefox. */  
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--col);
+    display: flex; /* prevents overflow of child margins */
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

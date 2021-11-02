@@ -1,0 +1,42 @@
+
+.bar {
+    height: 0.5rem;
+    /* margin: 1rem 0; */
+    background: var(--bgAlt);
+    position: relative;
+    box-sizing: border-box;
+}
+.bar::before,
+.bar::after {
+    /* content: ""; */
+    position: absolute;
+    top:    -0.4rem;
+    bottom: -0.4rem;
+    border-style: solid;
+    border-color: #865;
+    display: block;
+    width: 0.4rem;
+    border-width: 2px 2px;
+}
+.bar::before {
+    left: -0.35rem;
+    border-right-width: 0;
+}
+.bar::after {
+    right: -0.35rem;
+    border-left-width: 0;
+}
+.bar > div {
+    content: "";
+    background: var(--accent);
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+    /* background: repeating-linear-gradient(
+        to right,
+        var(--accent), 
+        var(--accent) 2px, 
+        transparent 2px, 
+        transparent 8px); */
+    height: 100%;
+    display: block;
+}

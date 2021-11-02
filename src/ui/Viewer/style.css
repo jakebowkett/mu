@@ -1,0 +1,188 @@
+@import '../var.css';
+
+.viewer {
+    --pad: 1.5rem;
+    --brdW: 2px;
+
+    color: var(--accent);
+    flex: 1 1 100%;
+    position: relative;
+    padding: 0 var(--pad);
+    padding-top:  3.5rem;
+    padding-left: 2rem;
+    height: 100%;
+    box-sizing: border-box;
+    background: var(--bgAlt);
+    overflow: hidden;
+}
+.viewer .orbs {
+    position: absolute;
+    bottom: 0;
+    left:   0;
+    width: 100%;
+    display: flex;
+    gap: 0.5rem;
+    padding-left: 3rem;
+}
+.viewer .orbs::before {
+    --dim: 4rem;
+    content: "";
+    width:  var(--dim);
+    height: var(--dim);
+    background: var(--bg);
+    border: var(--brdW) solid var(--accent);
+    border-radius: 10rem;
+    position: absolute;
+    left: calc(calc(var(--dim) / 2) * var(--neg));
+    z-index: 2;
+}
+.viewer .orbs > div {
+    width:  1rem;
+    height: 1rem;
+    background: var(--bg);
+    border: var(--brdW) solid var(--accent);
+    border-radius: 2rem;
+    margin-bottom: 1rem;
+}
+.viewer::before,
+.viewer::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+}
+.viewer::before {
+    position: absolute;
+    top:    0;
+    bottom: 0;
+    left:   0;
+    right:  0;
+    border: var(--brdW) solid var(--accent);
+    z-index: 1;
+}
+.viewer::after {
+    --h: 1.5rem;
+    top:  calc(var(--brdW) * var(--neg));
+    left: calc(var(--h) * var(--neg));
+    width: 26rem;
+    height: 1.5rem;
+    background: var(--bg);
+    z-index: 2;
+    border: var(--brdW) solid var(--accent);
+    border-right-width: calc(var(--brdW) * 1.5);
+    transform: skewX(-45deg);
+}
+.viewer .btn {
+    position: absolute;
+    top:   var(--pad);
+    right: var(--pad);
+    z-index: 1;
+}
+.viewer .content {
+    font-size: 1.15rem;
+    text-align: justify;
+    color: var(--col);
+    padding-bottom: 6rem;
+}
+.viewer.empty .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    opacity: 0.33;
+    font-family: var(--serif);
+    height: 100%;
+    box-sizing: border-box;
+}
+.viewer .content .meta {
+    display: flex;
+    justify-content: center;
+    color: var(--accent);
+    font-weight: bold;
+}
+.viewer .content .to,
+.viewer .content .from {
+    color: var(--accent);
+}
+.viewer .content .to   code,
+.viewer .content .from code {
+    background: var(--accent);
+}
+.viewer .content .to   p,
+.viewer .content .from p {
+    margin: 0;
+    line-height: 1.5rem;
+}
+.viewer .content .from {
+    display: flex;
+    justify-content: flex-end;
+}
+.viewer .content h2 {
+    background: var(--accent);
+    margin-top: 2.5rem;
+    font-size: 1rem;
+    font-family: var(--sans);
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--bgAlt);
+    padding: 0.2rem 0;
+    margin-left: -1rem;
+    padding-left: 1rem;
+    position: relative;
+}
+h2::before,
+h2::after {
+    content: "";
+    position: absolute;
+}
+h2::before {
+    background: var(--bgAlt);
+    bottom: -0.7rem;
+    left:   -0.7rem;
+    height: 1.4rem;
+    width:  1.4rem;
+    transform: rotateZ(-45deg);
+}
+h2::after {
+    top:    -1px;
+    right:  -1.5rem;
+    width:  50%;
+    height: 1rem;
+    background-color: var(--bgAlt);
+    transform: skewX(45deg);
+}
+.viewer .content h2:first-child {
+    margin-top: 1rem;
+}
+.viewer .content code {
+    font-family: var(--code);
+    background-color: var(--col);
+    margin: 0 1px;
+}
+.viewer .content h2 code {
+    background-color: var(--bgAlt);
+}
+.viewer .content a {
+    color: var(--accentAlt);
+    padding-left: 1px;
+    padding-right: 2px;
+    margin-left: -1px;
+    margin-right: -2px;
+}
+.viewer .content a:hover {
+    color: var(--bg);
+    text-shadow: var(--bgTextShadow);
+    background: var(--accentAlt);
+}
+.viewer .content ul {
+    list-style-type: upper-roman;
+    list-style-type:square;
+}
+.viewer .content li p {
+    margin: 0;
+}
+.viewer .content li {
+    margin-bottom: 0.2rem;
+}
+.viewer .content li:last-child {
+    margin-bottom: 2rem;
+}
