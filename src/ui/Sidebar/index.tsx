@@ -1,9 +1,9 @@
 
 import "./style.css"
-import Tree, {TNode} from '../Tree';
+import Tree, { TNode } from '../Tree';
 import Bar from '../Bar';
-import {TOnSelect} from "../type";
-import {findAncestor} from "../tool";
+import { TOnSelect } from "../type";
+import { findAncestor } from "../tool";
 
 interface IPropSidebar {
     tree:      TNode[];
@@ -16,8 +16,8 @@ function Sidebar(prop: IPropSidebar) {
     return (
         <div id="sidebar">
             <h1>{prop.heading}</h1>
-            <Bar/>
-            <Bar/>
+            <Bar />
+            <Bar />
             <div className="fader fade-bottom">
                 <div id="file-picker" onScroll={filePickerScroll}>
                     <Tree
