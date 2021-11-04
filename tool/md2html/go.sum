@@ -1,0 +1,10 @@
+github.com/BurntSushi/toml v0.4.1 h1:GaI7EiDXDRfa8VshkTj7Fym7ha+y8/XxIgD2okUIjLw=
+github.com/BurntSushi/toml v0.4.1/go.mod h1:CxXYINrC8qIiEnFrOxCa7Jy5BFHlXnUU2pbicEuybxQ=
+github.com/gomarkdown/markdown v0.0.0-20210918233619-6c1113f12c4a h1:syEwbl3pF5Y1mnIStrPwqd50vNU1AAKuAy8HFCPAgUc=
+github.com/gomarkdown/markdown v0.0.0-20210918233619-6c1113f12c4a/go.mod h1:JDGcbDT52eL4fju3sZ4TeHGsQwhG9nbDV21aMyhwPoA=
+github.com/jakebowkett/go-hyphenate v0.0.0-20200222031023-0f421bee6483 h1:6abC3EHTk+YWfolyPqEMdT0xqTfyF4nlgiF+rpQYPNE=
+github.com/jakebowkett/go-hyphenate v0.0.0-20200222031023-0f421bee6483/go.mod h1:zg4G84nC/HuXDgcYyNSXAlP04pUrnwFDRXX1lWBxVRU=
+github.com/jakebowkett/go-num v0.0.0-20200131075144-32de50b661e5 h1:n64fCG9SJ6xsGUnj39/q00hgR1akdZliU2GZEF1YA3M=
+github.com/jakebowkett/go-num v0.0.0-20200131075144-32de50b661e5/go.mod h1:khMf+80aEdkrs39ZfXSMzX8sUOo7qEapm6FdX6Uuid8=
+github.com/speedata/hyphenation v1.0.1 h1:O9gKtVw2JvyiHybCYJwpB3zzHaeXEvDtXjiExZdm1TU=
+github.com/speedata/hyphenation v1.0.1/go.mod h1:vwrKKvBvJWFll0sVZw99hyWS/+r4YlMI7MAYjnje0nM=
