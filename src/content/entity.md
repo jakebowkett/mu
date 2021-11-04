@@ -4,7 +4,7 @@ Body = """
 
 While it cannot be confirmed it seems intuitive that `Entity X` which takes the form of `Neil Armstrong` and the artifact at site XCVII being a space shuttle are related.
 
-`Entity X` moves as if subjected to `low gravity` like that on `the moon`. Its appearance is preceded by a "ping" of sorts akin to submarine sonar. Reports also exist of `astronaut boot footprints` and `a motionless pre-Democratic Empire flag` being discovered in the minutes prior to an encounter but these are secondhand accounts. Only one suvivor exists.
+`Entity X` moves as if subjected to `low gravity` like that on `the moon`. Its appearance is preceded by a "ping" of sorts akin to a submarine's active sonar. Reports also exist of `astronaut boot footprints` and `a motionless pre-Democratic Empire flag` being discovered in the minutes prior to an encounter but these are secondhand accounts. Only one suvivor exists.
 
 ## Counter-Measures
 
