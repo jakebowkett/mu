@@ -1,2 +1,7 @@
 node_modules
 dist
+server
+public/content
+src/content/import.tsx
+*.exe
+*.code-workspace
