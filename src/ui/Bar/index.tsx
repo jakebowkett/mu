@@ -1,40 +1,20 @@
 
 import "./style.css";
-import React from "react";
+import { useEffect, useState } from "react";
 
-interface IStateBar {
-    offset: number,
-    intervalId?: number,
-};
-
-class Bar extends React.Component<{}, IStateBar> {
-    
-    constructor(props: {}) {
-        super(props);
-        this.state = {offset: 0};
-    }
-
-    componentDidMount() {
-        this.setState({intervalId: window.setInterval(() => this.tick(), 200)});
-    }
-
-    componentWillUnmount() {
-        clearInterval(this.state.intervalId);
-    }
-
-    tick() {
-        const n = Math.random() * 100;
-        this.setState({offset: (n + this.state.offset/2) / 1.5});
-    }
-
-    render() {
-        const props = {style: {width: `${this.state.offset}%`}};
-        return (
-            <div className="bar">
-                <div {...props}></div>
-            </div>
-        );
-    }
+function Bar({interval = 200}) {
+    const [off, setOff] = useState(0);
+    useEffect(() => {
+        setTimeout(() => {
+            const n = Math.random() * 100;
+            setOff((n + off/2) / 1.5);
+        }, interval);
+    }, [off]);
+    return (
+        <div className="bar">
+            <div style={{width: `${off}%`}}></div>
+        </div>
+    );
 }
 
 export default Bar;
