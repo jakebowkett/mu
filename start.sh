@@ -1,2 +1,2 @@
 #!/bin/bash
-npx webpack serve --mode development
+NODE_ENV=development npx webpack serve --mode development
