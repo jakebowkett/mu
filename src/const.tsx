@@ -1,6 +1,4 @@
 
-/* 
-    Constants populated by webpack.
-*/
-
+declare module "*.html";
+declare module "*.md";
 declare const PATH_PREFIX: string;
