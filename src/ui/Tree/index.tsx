@@ -2,7 +2,7 @@
 import "./style.css";
 import React from "react";
 import {Folder, Arrow} from "../Icon";
-import {OnSelect} from "../types";
+import {TOnSelect} from "../type";
 
 type TNode = {
     id: string,
@@ -18,7 +18,7 @@ interface IPropsNode {
     open: boolean,
     text: string,
     children: any[],
-    onSelect: OnSelect,
+    onSelect: TOnSelect,
     selected?: string,
     redacted: boolean,
     classified: boolean,
@@ -90,7 +90,7 @@ class Node extends React.Component<IPropsNode, IStateNode> {
 
 interface IPropsTree {
     notRoot?: boolean,
-    onSelect: OnSelect,
+    onSelect: TOnSelect,
     selected?: string,
     nodes: any[],
     open: boolean,
@@ -115,4 +115,4 @@ function Tree(props: IPropsTree) {
 }
 
 export default Tree;
-export type {OnSelect, TNode};
+export type {TNode};

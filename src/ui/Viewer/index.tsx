@@ -1,11 +1,11 @@
 
 import "./style.css";
 import Button from "../Button";
-import { OnSelect } from "../Tree";
+import { TOnSelect } from "../type";
 
 interface IPropsViewer {
     id: string,
-    onRemove: OnSelect,
+    onRemove: TOnSelect,
     file?: string,
 }
 

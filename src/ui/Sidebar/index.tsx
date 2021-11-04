@@ -2,12 +2,12 @@
 import "./style.css"
 import Tree, {TNode} from '../Tree';
 import Bar from '../Bar';
-import {OnSelect} from "../types";
-import {findAncestor} from "../tools";
+import {TOnSelect} from "../type";
+import {findAncestor} from "../tool";
 
 interface IPropSidebar {
     tree:      TNode[];
-    onSelect:  OnSelect;
+    onSelect:  TOnSelect;
     heading:   string;
     selected?: string;
 }
