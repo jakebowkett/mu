@@ -22,10 +22,10 @@
     width: 100%;
     display: flex;
     gap: 0.5rem;
-    padding-left: 3rem;
+    padding-left: 3.5rem;
 }
 .viewer .orbs::before {
-    --dim: 4rem;
+    --dim: 5rem;
     content: "";
     width:  var(--dim);
     height: var(--dim);
@@ -37,8 +37,9 @@
     z-index: 2;
 }
 .viewer .orbs > div {
-    width:  1rem;
-    height: 1rem;
+    --dim: 1.5rem;
+    width:  var(--dim);
+    height: var(--dim);
     background: var(--bg);
     border: var(--brdW) solid var(--accent);
     border-radius: 2rem;
