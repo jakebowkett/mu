@@ -1,43 +1,14 @@
 
 import "./style.css";
 
-enum align {
-    topLeft = 1,
-    topRight,
-    bottomLeft,
-    bottomRight,
-}
-
-interface IPropsLabel {
-    text:  string,
-    align?: align,
-}
-
-function Label(props: IPropsLabel) {
-    const cls = [];
-    const a = props.align ? props.align : align.topLeft;
-    switch (a) {
-    case align.topLeft:     cls.push("top", "left");     break;
-    case align.topRight:    cls.push("top", "right");    break;
-    case align.bottomLeft:  cls.push("bottom", "left");  break;
-    case align.bottomRight: cls.push("bottom", "right"); break;
-    }
-    return (
-        <div className={["label", ...cls].join(" ")}>
-            <div className="text">{props.text}</div>
-            <div className="lip"/>
-        </div>
-    );
-}
-
-function Map(props: {}) {
+function Map() {
     return (
         <div className="map">
             <div className="display">
                 <div className="labels">
-                    <Label text="Sector 07" align={align.bottomLeft}/>
+                    <Label text="Sector 07" align={Align.bottomLeft}/>
                     <Label text="Lixenih"/>
-                    <Label text="KP Recess" align={align.topRight}/>
+                    <Label text="KP Recess" align={Align.topRight}/>
                 </div>
                 <div className="lines">
                     <div/>
@@ -51,6 +22,35 @@ function Map(props: {}) {
                 <div/>
                 <div/>
             </div>
+        </div>
+    );
+}
+
+enum Align {
+    topLeft = 0,
+    topRight,
+    bottomLeft,
+    bottomRight,
+}
+
+interface IPropsLabel {
+    text:  string,
+    align?: Align,
+}
+
+function Label(props: IPropsLabel) {
+    const cls = [];
+    const a = props.align ? props.align : Align.topLeft;
+    switch (a) {
+    case Align.topLeft:     cls.push("top", "left");     break;
+    case Align.topRight:    cls.push("top", "right");    break;
+    case Align.bottomLeft:  cls.push("bottom", "left");  break;
+    case Align.bottomRight: cls.push("bottom", "right"); break;
+    }
+    return (
+        <div className={["label", ...cls].join(" ")}>
+            <div className="text">{props.text}</div>
+            <div className="lip"/>
         </div>
     );
 }
