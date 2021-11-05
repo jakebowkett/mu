@@ -107,9 +107,6 @@ func toml2html(src, dst string) (map[string]string, error) {
 		if err := writeIfUnique(name, c.Bytes()); err != nil {
 			return nil, err
 		}
-		// if err := os.WriteFile(name, c.Bytes(), 0600); err != nil {
-		// 	return nil, err
-		// }
 	}
 
 	return seen, nil
