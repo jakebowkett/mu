@@ -9,7 +9,7 @@ interface IPropsButton {
     hidden?: boolean,
 }
 
-function Button(props : IPropsButton) {
+function Button(props: IPropsButton) {
     const cls = ["btn"];
     if (props.dangerous) cls.push("dangerous");
     if (props.hidden)    cls.push("hidden");
