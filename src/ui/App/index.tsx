@@ -120,7 +120,8 @@ function makeSelect(
         }
         setFileId(id);
         setFileData(`<div class="loading">Loading...</div>`);
-        fetch(`${PATH_PREFIX}${CONTENT_MAPPING[id]}`)
+        // CONTENT_MAPPING paths already have PATH_PREFIX prepended.
+        fetch(`${CONTENT_MAPPING[id]}`)
             .then((res) => {
                 return res.text();
             })
